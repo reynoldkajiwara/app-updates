@@ -6,6 +6,15 @@
     <description>Updates for Benri</description>
     <language>en</language>
     <item>
+      <title>Benri 1.3</title>
+      <pubDate>Wed, 25 Nov 2026 09:52:09 GMT</pubDate>
+      <sparkle:version>4</sparkle:version>
+      <sparkle:shortVersionString>1.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul><li>New How to Use guide and a clearer Set Up Benri.</li></ul>]]></description>
+      <enclosure url="https://reynoldkajiwara.github.io/app-updates/benri/Benri-1.3.zip" type="application/octet-stream" sparkle:edSignature="b057KAEiAoWS8NjJcnb9fCfBbsOawtzNtDqGal0JpB/0SLlUV3K74BQxkaZOooS3sOfxNcPeqMJkT+0VxwYIBQ==" length="3168968"/>
+    </item>
+    <item>
       <title>Benri 1.2</title>
       <pubDate>Wed, 25 Nov 2026 09:04:36 GMT</pubDate>
       <sparkle:version>3</sparkle:version>
