@@ -6,6 +6,15 @@
     <description>Updates for Benri</description>
     <language>en</language>
     <item>
+      <title>Benri 1.2</title>
+      <pubDate>Wed, 25 Nov 2026 09:04:36 GMT</pubDate>
+      <sparkle:version>3</sparkle:version>
+      <sparkle:shortVersionString>1.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul><li>Video conversion now uses macOS 26&#x27;s newer video tools. No visible changes.</li></ul>]]></description>
+      <enclosure url="https://reynoldkajiwara.github.io/app-updates/benri/Benri-1.2.zip" type="application/octet-stream" sparkle:edSignature="yC4ktP/u3GSonUpKwPkxT4KqEfhOqi9pG7jiMZa1k4CaoW280ks0HrMxjOhG+4Fq6OSIzssuG7+t53+jJ0mdAA==" length="3112516"/>
+    </item>
+    <item>
       <title>Benri 1.1</title>
       <pubDate>Wed, 25 Nov 2026 08:21:21 GMT</pubDate>
       <sparkle:version>2</sparkle:version>
