@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reynold's Mac apps</title>
+<style>
+body{font-family:-apple-system,Inter,Helvetica,Arial,sans-serif;max-width:640px;margin:48px auto;padding:0 20px;color:#1d1d1f}
+h1{color:#024731;font-size:28px}li{margin:10px 0}a{color:#024731}.note{color:#666;font-size:14px}
+</style></head><body>
+<h1>Reynold's Mac apps</h1>
+<p>Personal apps. Download once; after that each app updates itself.</p>
+<ul id="apps"><li>Sukkiri: <span id="sukkiri">coming soon</span></li><li>Benri: <span id="benri">coming soon</span></li><li>Kocchi: <span id="kocchi">coming soon</span></li></ul>
+<p class="note">To install: download the zip, open it, drag the app into Applications, then open it.</p>
+<script>
+for (const app of ["sukkiri","benri","kocchi"]) {
+  fetch(app + "/appcast.xml").then(r => r.text()).then(t => {
+    const doc = new DOMParser().parseFromString(t, "application/xml");
+    const item = doc.querySelector("item"); if (!item) return;
+    const enc = item.querySelector("enclosure");
+    const ver = item.getElementsByTagNameNS("http://www.andymatuschak.org/xml-namespaces/sparkle","shortVersionString")[0];
+    const el = document.getElementById(app); el.textContent = "";
+    const a = document.createElement("a"); a.href = enc.getAttribute("url");
+    a.textContent = "Download " + (ver ? ver.textContent : "latest"); el.appendChild(a);
+  }).catch(() => {});
+}
+</script>
+</body></html>
