@@ -6,6 +6,15 @@
     <description>Updates for Sukkiri</description>
     <language>en</language>
     <item>
+      <title>Sukkiri 0.11.1</title>
+      <pubDate>Wed, 25 Nov 2026 08:10:48 GMT</pubDate>
+      <sparkle:version>3</sparkle:version>
+      <sparkle:shortVersionString>0.11.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul><li>Clears a technical warning in the updater (the first update delivered by the updater itself)</li></ul>]]></description>
+      <enclosure url="https://reynoldkajiwara.github.io/app-updates/sukkiri/Sukkiri-0.11.1.zip" type="application/octet-stream" sparkle:edSignature="fV5KwMWtx0gGqf5pG5K2g6y8OyTEavuezcGdVhEc640E+yi4j9R9RknhtdbdGH/5E2DpLutlzuC/dOcEfNzdDw==" length="1618422"/>
+    </item>
+    <item>
       <title>Sukkiri 0.11.0</title>
       <pubDate>Wed, 25 Nov 2026 08:02:36 GMT</pubDate>
       <sparkle:version>2</sparkle:version>
