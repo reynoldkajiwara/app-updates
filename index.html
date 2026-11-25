@@ -1,28 +1,214 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
 <title>Reynold's Mac apps</title>
+<link rel="icon" href="icons/sukkiri.png">
 <style>
-body{font-family:-apple-system,Inter,Helvetica,Arial,sans-serif;max-width:640px;margin:48px auto;padding:0 20px;color:#1d1d1f}
-h1{color:#024731;font-size:28px}li{margin:10px 0}a{color:#024731}.note{color:#666;font-size:14px}
-</style></head><body>
-<h1>Reynold's Mac apps</h1>
-<p>Personal apps. Download once; after that each app updates itself.</p>
-<ul id="apps"><li>Sukkiri: <span id="sukkiri">coming soon</span></li><li>Benri: <span id="benri">coming soon</span></li><li>Kocchi: <span id="kocchi">coming soon</span></li></ul>
-<p class="note">To install: download, open it, and drag the app onto the Applications folder in the window that appears. Then open the app from Applications.</p>
+:root {
+  --bg: #f5f6f8; --card: #ffffff; --text: #1d1d1f; --muted: #5b5f66; --line: #e3e5e9;
+  --chip: #eef0f3; --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.06);
+  --button-border: transparent;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141518; --card: #1e2024; --text: #f2f2f4; --muted: #a7abb3; --line: #30333a;
+    --chip: #2a2d33; --shadow: none; --button-border: rgba(255,255,255,.28);
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+main { max-width: 760px; margin: 0 auto; padding: 56px 20px 40px; }
+header h1 { font-size: 34px; line-height: 1.15; margin: 0 0 10px; letter-spacing: -0.02em; }
+header p { margin: 0; color: var(--muted); font-size: 18px; }
+
+.apps { list-style: none; padding: 0; margin: 36px 0 0; display: grid; gap: 18px; }
+.app {
+  background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+  box-shadow: var(--shadow); padding: 24px; display: grid;
+  grid-template-columns: 88px 1fr; gap: 6px 20px; align-items: start;
+}
+.app img { width: 88px; height: 88px; grid-row: span 2; }
+.app h2 { margin: 2px 0 0; font-size: 24px; letter-spacing: -0.01em; }
+.app h2 .meaning { font-size: 15px; font-weight: 500; color: var(--muted); margin-left: 6px; letter-spacing: 0; }
+.app .what { margin: 4px 0 0; }
+.actions { grid-column: 2; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: 12px; }
+.download {
+  display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+  background: var(--accent); color: #fff; font-weight: 650; font-size: 16px;
+  padding: 11px 20px; border-radius: 12px; border: 1px solid var(--button-border);
+}
+.download:hover { filter: brightness(1.08); }
+.download:focus-visible, summary:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.download svg { width: 18px; height: 18px; }
+.meta { color: var(--muted); font-size: 15px; flex-basis: 100%; }
+.meta span + span::before { content: "·"; margin: 0 8px; color: var(--muted); }
+details { grid-column: 2; margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px; }
+summary { cursor: pointer; font-weight: 600; font-size: 15px; color: var(--muted); width: fit-content; }
+details ul { margin: 8px 0 0; padding-left: 20px; font-size: 15px; }
+details li + li { margin-top: 4px; }
+
+.sukkiri { --accent: #1f7a5e; }
+.benri   { --accent: #253068; }
+.kocchi  { --accent: #b8432a; }
+
+section.install { margin-top: 44px; }
+section.install h2 { font-size: 22px; margin: 0 0 14px; }
+.steps { list-style: none; counter-reset: step; padding: 0; margin: 0; display: grid; gap: 12px; }
+.steps li {
+  counter-increment: step; display: grid; grid-template-columns: 34px 1fr; gap: 14px; align-items: start;
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px;
+}
+.steps li::before {
+  content: counter(step); width: 34px; height: 34px; border-radius: 50%;
+  background: var(--chip); display: grid; place-items: center; font-weight: 700;
+}
+.steps strong { display: block; }
+.note { margin: 16px 2px 0; color: var(--muted); font-size: 15px; }
+
+footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+
+@media (max-width: 560px) {
+  main { padding-top: 36px; }
+  header h1 { font-size: 28px; }
+  .app { grid-template-columns: 64px 1fr; padding: 20px; }
+  .app img { width: 64px; height: 64px; grid-row: auto; }
+  .actions, details { grid-column: 1 / -1; }
+}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Reynold's Mac apps</h1>
+    <p>Small, focused tools for the Mac. Download once, and each app keeps itself up to date.</p>
+  </header>
+
+  <ul class="apps">
+    <li class="app sukkiri" data-slug="sukkiri" data-name="Sukkiri">
+      <img src="icons/sukkiri.png" alt="">
+      <div>
+        <h2>Sukkiri <span class="meaning" lang="ja">すっきり</span><span class="meaning">“neat”</span></h2>
+        <p class="what">Copy from Google Docs, a web page or Word, and paste into email without the messy fonts, colors and highlights. Links, bullets and bold stay.</p>
+      </div>
+      <div class="actions">
+        <a class="download" href="sukkiri/Sukkiri.dmg" aria-label="Download Sukkiri for Mac">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+          Download
+        </a>
+        <span class="meta" aria-live="polite"></span>
+      </div>
+      <details hidden><summary>What's new</summary><ul></ul></details>
+    </li>
+
+    <li class="app benri" data-slug="benri" data-name="Benri">
+      <img src="icons/benri.png" alt="">
+      <div>
+        <h2>Benri <span class="meaning" lang="ja">便利</span><span class="meaning">“handy”</span></h2>
+        <p class="what">A toolbox in Finder's right-click menu: convert, shrink, rename and tidy up files. Plus ShortClick, a ring of shortcuts that opens at your pointer.</p>
+      </div>
+      <div class="actions">
+        <a class="download" href="benri/Benri.dmg" aria-label="Download Benri for Mac">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+          Download
+        </a>
+        <span class="meta" aria-live="polite"></span>
+      </div>
+      <details hidden><summary>What's new</summary><ul></ul></details>
+    </li>
+
+    <li class="app kocchi" data-slug="kocchi" data-name="Kocchi">
+      <img src="icons/kocchi.png" alt="">
+      <div>
+        <h2>Kocchi <span class="meaning" lang="ja">こっち</span><span class="meaning">“this way”</span></h2>
+        <p class="what">Turns your pointer into a hand that taps when you click, so people watching your shared screen can follow along.</p>
+      </div>
+      <div class="actions">
+        <a class="download" href="kocchi/Kocchi.dmg" aria-label="Download Kocchi for Mac">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+          Download
+        </a>
+        <span class="meta" aria-live="polite"></span>
+      </div>
+      <details hidden><summary>What's new</summary><ul></ul></details>
+    </li>
+  </ul>
+
+  <section class="install" aria-labelledby="install-title">
+    <h2 id="install-title">How to install</h2>
+    <ol class="steps">
+      <li><div><strong>Download and open it.</strong>A window appears with the app on the left and your Applications folder on the right.</div></li>
+      <li><div><strong>Drag the app onto Applications.</strong>That's the whole install.</div></li>
+      <li><div><strong>Open it from Applications.</strong>These apps live in the menu bar at the top right of your screen, near the clock. A short guide shows you around the first time.</div></li>
+    </ol>
+    <p class="note">After that, each app updates itself. To check right away, click its icon near the clock and choose Check for Updates.</p>
+  </section>
+
+  <footer>Made by Reynold Kajiwara. Every download is signed and checked by Apple.</footer>
+</main>
+
 <script>
-for (const app of ["sukkiri","benri","kocchi"]) {
-  fetch(app + "/appcast.xml").then(r => r.text()).then(t => {
-    const doc = new DOMParser().parseFromString(t, "application/xml");
-    const item = doc.querySelector("item"); if (!item) return;
-    const enc = item.querySelector("enclosure");
-    const ver = item.getElementsByTagNameNS("http://www.andymatuschak.org/xml-namespaces/sparkle","shortVersionString")[0];
-    const el = document.getElementById(app); el.textContent = "";
-    const a = document.createElement("a"); a.href = enc.getAttribute("url");
-    a.textContent = "Download " + (ver ? ver.textContent : "latest"); el.appendChild(a);
-    // Prefer the drag-to-Applications installer when this app has one.
-    const name = app.charAt(0).toUpperCase() + app.slice(1);
-    fetch(app + "/" + name + ".dmg", {method: "HEAD"}).then(r => { if (r.ok) a.href = app + "/" + name + ".dmg"; }).catch(() => {});
-  }).catch(() => {});
+// Fills in version, date, macOS and release notes from each app's update feed (appcast.xml).
+// Without this, the page still works: the Download buttons are plain links.
+const SPARKLE = "http://www.andymatuschak.org/xml-namespaces/sparkle";
+const MAC_NAMES = { "14": "Sonoma", "15": "Sequoia", "26": "Tahoe" };
+
+function sparkle(item, tag) {
+  const el = item.getElementsByTagNameNS(SPARKLE, tag)[0];
+  return el ? el.textContent.trim() : "";
+}
+
+function addMeta(meta, text) {
+  const span = document.createElement("span");
+  span.textContent = text;
+  meta.appendChild(span);
+}
+
+for (const card of document.querySelectorAll(".app")) {
+  const slug = card.dataset.slug;
+  fetch(slug + "/appcast.xml", { cache: "no-cache" })
+    .then(r => r.ok ? r.text() : Promise.reject())
+    .then(text => {
+      const doc = new DOMParser().parseFromString(text, "application/xml");
+      const item = doc.querySelector("item");
+      if (!item) return;
+
+      const meta = card.querySelector(".meta");
+      const version = sparkle(item, "shortVersionString");
+      if (version) addMeta(meta, "Version " + version);
+      const date = new Date(item.querySelector("pubDate")?.textContent || "");
+      if (!isNaN(date)) addMeta(meta, date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }));
+      const major = sparkle(item, "minimumSystemVersion").split(".")[0];
+      if (major) addMeta(meta, "macOS " + major + (MAC_NAMES[major] ? " " + MAC_NAMES[major] : "") + " or later");
+
+      // Release notes: the list items in the description, as plain text.
+      const notes = new DOMParser().parseFromString(item.querySelector("description")?.textContent || "", "text/html");
+      const list = card.querySelector("details ul");
+      for (const li of notes.querySelectorAll("li")) {
+        const row = document.createElement("li");
+        row.textContent = li.textContent;
+        list.appendChild(row);
+      }
+      if (list.children.length) {
+        const details = card.querySelector("details");
+        details.querySelector("summary").textContent = "What's new in " + version;
+        details.hidden = false;
+      }
+
+      // If an app has no installer yet, fall back to the zip from the feed.
+      const button = card.querySelector(".download");
+      fetch(button.getAttribute("href"), { method: "HEAD" }).then(r => {
+        if (!r.ok) button.href = item.querySelector("enclosure").getAttribute("url");
+      }).catch(() => {});
+    })
+    .catch(() => {});
 }
 </script>
-</body></html>
+</body>
+</html>
