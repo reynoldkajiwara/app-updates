@@ -6,6 +6,15 @@
     <description>Updates for Sukkiri</description>
     <language>en</language>
     <item>
+      <title>Sukkiri 0.12</title>
+      <pubDate>Wed, 25 Nov 2026 09:49:06 GMT</pubDate>
+      <sparkle:version>5</sparkle:version>
+      <sparkle:shortVersionString>0.12</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul><li>New How to Use guide (broom menu &gt; How to Use Sukkiri). The Google Docs suggestions warning is now a setting, off by default.</li></ul>]]></description>
+      <enclosure url="https://reynoldkajiwara.github.io/app-updates/sukkiri/Sukkiri-0.12.zip" type="application/octet-stream" sparkle:edSignature="EpqrkCdY26zKacZUtHSezAFB4Ty4TxRH1ZeCUhxWAqnTp4bGxN0YoAcAQg/ONHMgZ9i01uNJmc+svgjZa4kPCQ==" length="1677732"/>
+    </item>
+    <item>
       <title>Sukkiri 0.11.2</title>
       <pubDate>Wed, 25 Nov 2026 08:41:15 GMT</pubDate>
       <sparkle:version>4</sparkle:version>
