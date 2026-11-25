@@ -5,5 +5,14 @@
     <link>https://reynoldkajiwara.github.io/app-updates/sukkiri/appcast.xml</link>
     <description>Updates for Sukkiri</description>
     <language>en</language>
+    <item>
+      <title>Sukkiri 0.11.0</title>
+      <pubDate>Wed, 25 Nov 2026 08:02:36 GMT</pubDate>
+      <sparkle:version>2</sparkle:version>
+      <sparkle:shortVersionString>0.11.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul><li>Updates itself from now on: broom menu &gt; Check for Updates…</li><li>Won&#x27;t paste Google Docs text that still has suggestions, and tells you why</li><li>Paste clean is now ⌃⌥⇧⌘V (Hyper+V); paste original stays ⌃⌥⌘V</li><li>Runs on macOS 14 or later</li></ul>]]></description>
+      <enclosure url="https://reynoldkajiwara.github.io/app-updates/sukkiri/Sukkiri-0.11.0.zip" type="application/octet-stream" sparkle:edSignature="UTJ0eUppQ3Unrt/skRXSbLL2h6CXLsJvsunEeYyIQSHh7JrAgXhnK4ch8v/kACxDyXpz3kLgq6D/AAuAiqSbAQ==" length="1618422"/>
+    </item>
   </channel>
 </rss>
