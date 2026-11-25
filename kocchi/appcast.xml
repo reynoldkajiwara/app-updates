@@ -5,5 +5,14 @@
     <link>https://reynoldkajiwara.github.io/app-updates/kocchi/appcast.xml</link>
     <description>Updates for Kocchi</description>
     <language>en</language>
+    <item>
+      <title>Kocchi 1.1</title>
+      <pubDate>Wed, 25 Nov 2026 08:21:21 GMT</pubDate>
+      <sparkle:version>2</sparkle:version>
+      <sparkle:shortVersionString>1.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul><li>Updates itself from now on: menu bar &gt; Check for Updates…</li></ul>]]></description>
+      <enclosure url="https://reynoldkajiwara.github.io/app-updates/kocchi/Kocchi-1.1.zip" type="application/octet-stream" sparkle:edSignature="foq1ivOIIreYH9y52XT8w7PXctX1E6T8xaGnxiQ0+9YNhz+hDr976T1OpcAGz7SyX7BBo3NP5Irq4UkDE/6qBA==" length="6251738"/>
+    </item>
   </channel>
 </rss>

@@ -5,5 +5,14 @@
     <link>https://reynoldkajiwara.github.io/app-updates/benri/appcast.xml</link>
     <description>Updates for Benri</description>
     <language>en</language>
+    <item>
+      <title>Benri 1.1</title>
+      <pubDate>Wed, 25 Nov 2026 08:21:21 GMT</pubDate>
+      <sparkle:version>2</sparkle:version>
+      <sparkle:shortVersionString>1.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul><li>Updates itself from now on: menu bar &gt; Check for Updates…</li><li>The menu now shows Benri&#x27;s real version number</li></ul>]]></description>
+      <enclosure url="https://reynoldkajiwara.github.io/app-updates/benri/Benri-1.1.zip" type="application/octet-stream" sparkle:edSignature="0ZqK+IW7dVi2o0FZSzmOI7FxBZobODiEuoI/jmEaeiGsNGBitiPowHBsVXmY1pQly2Q1RHnEHixFfcz9xsdwDg==" length="3110145"/>
+    </item>
   </channel>
 </rss>
