@@ -6,6 +6,15 @@
     <description>Updates for Kocchi</description>
     <language>en</language>
     <item>
+      <title>Kocchi 1.2.1</title>
+      <pubDate>Wed, 25 Nov 2026 09:55:05 GMT</pubDate>
+      <sparkle:version>4</sparkle:version>
+      <sparkle:shortVersionString>1.2.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul><li>The Welcome is now the How to Use Kocchi guide, in the menu any time.</li></ul>]]></description>
+      <enclosure url="https://reynoldkajiwara.github.io/app-updates/kocchi/Kocchi-1.2.1.zip" type="application/octet-stream" sparkle:edSignature="ggc7ZAPBSO7g/uF33prAUSCKP+saFvLydcmMfZ657aR5fETXquLa3vEIHHwb1/l2z0FHpJajESl1Tal1iuqEBw==" length="6284200"/>
+    </item>
+    <item>
       <title>Kocchi 1.2</title>
       <pubDate>Wed, 25 Nov 2026 09:02:08 GMT</pubDate>
       <sparkle:version>3</sparkle:version>
